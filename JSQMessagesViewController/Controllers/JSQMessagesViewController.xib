@@ -1,49 +1,98 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham Rounded Bold.otf">
+            <string>GothamRounded-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JSQMessagesViewController">
             <connections>
+                <outlet property="avatar" destination="TQF-R8-Ud4" id="vXr-Cg-9T6"/>
+                <outlet property="backButton" destination="zMU-Dk-xfG" id="k9t-sQ-Ldy"/>
                 <outlet property="collectionView" destination="l9u-2b-4LK" id="bLP-6g-CkO"/>
                 <outlet property="inputToolbar" destination="BoD-Az-3DM" id="w74-g9-1qA"/>
                 <outlet property="toolbarBottomLayoutGuide" destination="rHs-6q-NX4" id="d6h-iu-VMX"/>
                 <outlet property="toolbarHeightConstraint" destination="HIk-02-qcW" id="jE8-xC-1eD"/>
+                <outlet property="userTitle" destination="0aP-qh-6Y8" id="gDE-Ho-u6z"/>
                 <outlet property="view" destination="mUa-cS-ru4" id="nki-T1-RTI"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="mUa-cS-ru4">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l9u-2b-4LK" customClass="JSQMessagesCollectionView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewLayout key="collectionViewLayout" id="dZl-7C-LHR" customClass="JSQMessagesCollectionViewFlowLayout"/>
                     <cells/>
                 </collectionView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoD-Az-3DM" customClass="JSQMessagesInputToolbar">
-                    <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="HIk-02-qcW"/>
                     </constraints>
                     <items/>
                 </toolbar>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMU-Dk-xfG">
+                    <rect key="frame" x="20" y="30" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="lF4-5A-dXY"/>
+                    </constraints>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="4v2-mb-eVo"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aP-qh-6Y8">
+                    <rect key="frame" x="76" y="32" width="223" height="20"/>
+                    <fontDescription key="fontDescription" name="GothamRounded-Bold" family="Gotham Rounded" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TQF-R8-Ud4">
+                    <rect key="frame" x="303" y="21" width="42" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="xik-Eq-tkS"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="TQF-R8-Ud4" firstAttribute="centerY" secondItem="0aP-qh-6Y8" secondAttribute="centerY" id="6dm-7t-pSx"/>
+                <constraint firstItem="zMU-Dk-xfG" firstAttribute="centerY" secondItem="0aP-qh-6Y8" secondAttribute="centerY" id="71S-12-QpZ"/>
                 <constraint firstAttribute="trailing" secondItem="BoD-Az-3DM" secondAttribute="trailing" id="7xc-Ha-asg"/>
                 <constraint firstItem="l9u-2b-4LK" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="MmF-oh-Y75"/>
                 <constraint firstAttribute="trailing" secondItem="l9u-2b-4LK" secondAttribute="trailing" id="O9u-TA-A0e"/>
                 <constraint firstAttribute="bottom" secondItem="l9u-2b-4LK" secondAttribute="bottom" id="Re7-WW-UmS"/>
-                <constraint firstItem="l9u-2b-4LK" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" id="dCQ-DM-Wdj"/>
+                <constraint firstItem="0aP-qh-6Y8" firstAttribute="centerX" secondItem="mUa-cS-ru4" secondAttribute="centerX" id="UwH-j7-9qI"/>
+                <constraint firstItem="TQF-R8-Ud4" firstAttribute="leading" secondItem="0aP-qh-6Y8" secondAttribute="trailing" constant="4" id="WWE-lK-dil"/>
+                <constraint firstItem="zMU-Dk-xfG" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" constant="30" id="ZfM-FK-aG5"/>
+                <constraint firstItem="l9u-2b-4LK" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" constant="80" id="dCQ-DM-Wdj"/>
+                <constraint firstItem="zMU-Dk-xfG" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" constant="20" id="fNp-U6-Zb9"/>
+                <constraint firstItem="TQF-R8-Ud4" firstAttribute="width" secondItem="TQF-R8-Ud4" secondAttribute="height" multiplier="1:1" id="lrD-uu-42Z"/>
+                <constraint firstItem="zMU-Dk-xfG" firstAttribute="width" secondItem="zMU-Dk-xfG" secondAttribute="height" multiplier="1:1" id="ofE-je-ndM"/>
                 <constraint firstAttribute="bottom" secondItem="BoD-Az-3DM" secondAttribute="bottom" id="rHs-6q-NX4"/>
                 <constraint firstItem="BoD-Az-3DM" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="ts7-8f-0lH"/>
+                <constraint firstAttribute="trailing" secondItem="TQF-R8-Ud4" secondAttribute="trailing" constant="30" id="vDA-ie-6zR"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

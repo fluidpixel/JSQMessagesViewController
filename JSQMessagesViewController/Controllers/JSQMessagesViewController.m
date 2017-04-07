@@ -124,6 +124,9 @@ JSQMessagesKeyboardControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet JSQMessagesCollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet JSQMessagesInputToolbar *inputToolbar;
+@property (weak, nonatomic) IBOutlet UILabel *userTitle;
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarBottomLayoutGuide;
@@ -1152,4 +1155,6 @@ JSQMessagesKeyboardControllerDelegate>
     }
 }
 
+- (IBAction)backAction:(id)sender {
+}
 @end

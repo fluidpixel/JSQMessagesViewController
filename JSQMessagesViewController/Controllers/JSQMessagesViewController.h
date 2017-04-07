@@ -39,6 +39,11 @@
  */
 @property (weak, nonatomic, readonly) JSQMessagesCollectionView *collectionView;
 
+@property (weak, nonatomic, readonly) UIImageView *avatar;
+@property (weak, nonatomic, readonly) UILabel *userTitle;
+@property (weak, nonatomic, readonly) UIButton *backButton;
+- (IBAction)backAction:(id)sender;
+
 /**
  *  Returns the input toolbar view object managed by this view controller.
  *  This view controller is the toolbar's delegate.
